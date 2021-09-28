@@ -35,22 +35,37 @@
       ctx.arc(cx, cy, radio, 0, 2 * Math.PI);
       ctx.clip();
   }
+  function recorted(arr){
+
+ctx.beginPath();
+  ctx.moveTo(arr[0],arr[1]);
+  for (var i=2; i < arr.length; i+=2)
+  ctx.lineTo(arr[i],arr[i+1]);
+
+  ctx.clip()
+}
     var canvas = document.getElementById('tablero');
     var ctx = canvas.getContext('2d');
 
    var [azul, verde, rojo, blanco] = ['rgba(0,162,232)', 'rgba(181,230,29)', 'rgba(237,28,36)', 'rgba(255,255,255)'];
-  var penta = [345,4,539,143,466,368,244,368,149,144], penta2=[302,68,424,156,380,303,277,303,182,157],barra =[12,142,6,189,542,288,547,239,]
+  var penta = [345,4,539,143,466,368,244,368,149,144], penta2=[339,75,469,158,420,297,257,298,207,158],barra =[12,142,6,189,542,288,547,239,]
 
 
 
 
-  figura(penta,azul,azul)//pentagono azul
-  figura(penta2,blanco,blanco)//pentagono blanco
-  figura(barra,verde,verde)//barra verde
-  circulo(184,157,132,rojo, rojo);
-  circulo(221,164,85, blanco,blanco)
-  recorte(221,164,85)
-  figura(penta,azul,azul)//pentagono azul
-  figura(penta2,blanco,blanco)//pentagono blanco
-  figura(barra,verde,verde)//barra verde
+figura(penta,azul,azul)//pentagono azul
+figura(penta2,blanco,blanco)//pentagono blanco 
+figura(barra,verde,verde)//barra verde
+   
+circulo(184,157,132,rojo, rojo); 
+circulo(221,164,85, blanco,blanco)
+ 
+recorte(221,164,85)
+
+figura(penta,azul,azul)//pentagono azul
+figura(penta,azul,azul)//pentagono azul
+figura(barra,verde,verde)//barra verde
+figura(penta2,blanco,blanco)//pentagono blanco
+figura(barra,verde,verde)//barra verde
+
   </script>

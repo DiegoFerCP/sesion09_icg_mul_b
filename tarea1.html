@@ -1,0 +1,49 @@
+ <canvas id='tablero' width=900 height=900>
+  <script>
+
+
+  function figura(cd,colorBorde,colorRelleno,grosor){
+
+    ctx.strokeStyle = colorBorde;
+    ctx.fillStyle = colorRelleno;
+    ctx.lineWidtth = grosor;
+
+    ctx.beginPath();
+    ctx.moveTo(cd[0],cd[1]);
+  for (var i=2; i < cd.length; i+=2)
+    ctx.lineTo(cd[i],cd[i+1]);
+    ctx.closePath();
+    ctx.stroke();
+    ctx.fill();
+
+   }
+
+  function recorte(arr){
+
+ctx.beginPath();
+  ctx.moveTo(arr[0],arr[1]);
+  for (var i=2; i < arr.length; i+=2)
+  ctx.lineTo(arr[i],arr[i+1]);
+
+  ctx.clip()
+}
+
+    var canvas = document.getElementById('tablero');
+    var ctx = canvas.getContext('2d');
+
+   var [azul, verde, rojo, amarillo] = ['rgba(71,181,193)', 'rgba(181,230,29)', 'rgba(237,28,36)', 'rgba(248,235,62)'];
+  var flecha = [42,141,42,179,535,178,614,160,534,141], rectder=[467,1,468,355,426,355,424,1],rectizq =[128,1,128,355,82,355,82,1], rectdia = [22,9,1,66,516,308,536,251] 
+ 
+
+figura(flecha,azul,azul)
+
+
+figura(rectder,verde,verde)
+
+
+figura(rectdia,amarillo,amarillo)
+recorte([128,1,128,355,82,355,82,1])
+figura(rectizq,rojo,rojo)
+figura(flecha,azul,azul)
+recorte(467,1,468,355,426,355,424,1)
+</script>
